@@ -1,11 +1,4 @@
-# Create-React-App with Typescript and Less template
-
-This repo is a CRA (Create-React-App) initial template with **Typescript** and **Less**.  
-Made by Yuanlin Lin.
-
-## Usage
-
-Clone this repo and start coding in `src` directory.
+# GCD Official Website
 
 ## Scripts
 
