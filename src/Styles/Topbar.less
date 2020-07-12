@@ -1,0 +1,28 @@
+@import "./variables.less";
+
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: @theme-color;
+    img {
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+            cursor: pointer;
+            color: white;
+            font-size: 31px;
+            border-bottom: solid transparent 1px;
+            transition: border-bottom 0.3s ease;
+        }
+        p:hover {
+            border-bottom: solid white 1px;
+        }
+    }
+}
