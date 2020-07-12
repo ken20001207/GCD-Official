@@ -1,8 +1,16 @@
-import { Component } from "react";
-import React from "react";
+import React, { Component } from "react";
+import { RouteChildrenProps } from "react-router-dom";
+import Topbar from "../Components/Topbar";
 
-export default class Projects extends Component {
+interface Props {
+    history: RouteChildrenProps;
+}
+export default class Projects extends Component<Props> {
     render() {
-        return <div />;
+        return (
+            <div>
+                <Topbar history={this.props.history} />
+            </div>
+        );
     }
 }
