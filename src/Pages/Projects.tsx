@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Col, Row } from "react-flexbox-grid";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import {
     BrowserRouter,
     Route,
@@ -163,7 +165,8 @@ export default class Projects extends Component<Props, State> {
                                         </p>
                                     </Col>
                                     <Col xs={8} className="flex">
-                                        <img
+                                        <LazyLoadImage
+                                            effect="blur"
                                             src={
                                                 this.state
                                                     .watchingProject
