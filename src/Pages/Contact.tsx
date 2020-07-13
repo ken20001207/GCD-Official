@@ -67,7 +67,10 @@ export default class Contact extends Component<Props, State> {
                             <h4>PRIMARY CONTACTS</h4>{" "}
                             <Row className="info-row">
                                 <Col xs={2} className="central">
-                                    <img src="/images/svgs/phone.svg" />
+                                    <img
+                                        src="/images/svgs/phone.svg"
+                                        alt="/images/svgs/phone.svg"
+                                    />
                                 </Col>
                                 <Col xs={10} className="central">
                                     <p>
@@ -78,7 +81,10 @@ export default class Contact extends Component<Props, State> {
                             </Row>
                             <Row className="info-row">
                                 <Col xs={2} className="central">
-                                    <img src="/images/svgs/mail.svg" />
+                                    <img
+                                        src="/images/svgs/mail.svg"
+                                        alt="/images/svgs/mail.svg"
+                                    />
                                 </Col>
                                 <Col xs={10} className="central">
                                     <p>
@@ -88,7 +94,10 @@ export default class Contact extends Component<Props, State> {
                             </Row>
                             <Row className="info-row">
                                 <Col xs={2} className="central">
-                                    <img src="/images/svgs/pin.svg" />
+                                    <img
+                                        src="/images/svgs/pin.svg"
+                                        alt="/images/svgs/pin.svg"
+                                    />
                                 </Col>
                                 <Col xs={10} className="central">
                                     <p>
