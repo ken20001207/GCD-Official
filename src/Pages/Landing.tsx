@@ -62,7 +62,7 @@ export default class Landing extends Component<Props, States> {
                             <p
                                 onClick={() => {
                                     this.props.history.history.push(
-                                        "/projects"
+                                        "/projects/office"
                                     );
                                 }}
                             >
@@ -127,22 +127,19 @@ export default class Landing extends Component<Props, States> {
                                             "/projects/" +
                                                 hl.class +
                                                 "/" +
-                                                hl.projectID
+                                                hl.id
                                         )
                                     }
+                                    style={{
+                                        backgroundImage:
+                                            "url(" +
+                                            hl.coverPhoto +
+                                            ")",
+                                    }}
                                 >
                                     <div className="overlay">
-                                        <p>{hl.description}</p>
+                                        <p>{hl.name}</p>
                                     </div>
-                                    <img
-                                        src={
-                                            "/images/" + hl.coverPhoto
-                                        }
-                                        alt={
-                                            "Cover photo of " +
-                                            hl.description
-                                        }
-                                    />
                                 </div>
                             </Col>
                         ))}
