@@ -1,50 +1,67 @@
+@import "./variables.less";
+
 .contact-page {
     .bg {
-        position: relative;
-        top: 0;
-        img {
+        background-image: url(https://gdc-official-preview.netlify.app/images/contactbg.png);
+
+        .container-outer {
             width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            object-position: center;
-            background-color: black;
-        }
-    }
+            margin: 0;
 
-    .container {
-        border-radius: 18px;
-        position: absolute;
-        padding: 80px 120px;
-        top: 0;
-        width: 70%;
-        margin: 20vh 15%;
-        height: 70vh;
-        background-color: white;
+            .col {
+                padding: 0;
+            }
 
-        .companyname {
-            height: 64px;
-            font-size: 24px;
-            margin-bottom: 24px;
-        }
+            .container {
+                z-index: 2;
+                position: relative;
+                @media (max-width: @md) {
+                    padding: 72px 60px;
+                    margin: 0;
+                    border-radius: 18px;
+                }
+                @media (min-width: @md) {
+                    padding: 60px 120px;
+                    margin: 20vh 0;
+                    border-radius: 18px;
+                }
+                top: 0;
+                width: 100%;
+                background-color: white;
 
-        .right {
-            margin-left: 72px;
-            .info-row {
-                margin-top: 36px;
                 img {
-                    width: 36px;
+                    position: relative;
+                    width: 100%;
+                    background-color: TRANSPARENT;
+                    @media (max-width: @md) {
+                        margin-bottom: 36px;
+                    }
+                }
+
+                .companyname {
+                    font-size: 24px;
+                    margin-bottom: 24px;
+                }
+
+                .right {
+                    .info-row {
+                        margin-top: 36px;
+                        img {
+                            width: 36px;
+                            object-fit: contain;
+                        }
+                    }
+                }
+
+                .central {
+                    display: flex;
+                    align-content: center;
+                }
+
+                .map {
                     object-fit: contain;
                 }
             }
-        }
-
-        .central {
-            display: flex;
-            align-content: center;
-        }
-
-        .map {
-            width: 100%;
         }
     }
 }

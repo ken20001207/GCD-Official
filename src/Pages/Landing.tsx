@@ -2,7 +2,15 @@ import React, { Component } from "react";
 import { Col, Row } from "react-flexbox-grid";
 import { RouteComponentProps } from "react-router-dom";
 import Footer from "../Components/Footer";
-import { classes, HightLights } from "../data";
+import {
+    LandingRow1D,
+    LandingRow1M,
+} from "../Components/LandingRow1";
+import {
+    LandingRow2D,
+    LandingRow2M,
+} from "../Components/LandingRow2";
+import { HightLights } from "../data";
 import "../Styles/Landing.less";
 
 interface Props {
@@ -10,17 +18,17 @@ interface Props {
 }
 
 interface States {
-    windowHeight: number;
+    windowWidth: number;
     loadedImg: string[];
 }
 
 export default class Landing extends Component<Props, States> {
     constructor(props: Readonly<Props>) {
         super(props);
-        this.state = { windowHeight: 0, loadedImg: [] };
-        this.updateWindowDimensions = this.updateWindowDimensions.bind(
-            this
-        );
+        this.state = {
+            windowWidth: 0,
+            loadedImg: [],
+        };
     }
 
     componentDidMount() {
@@ -38,11 +46,11 @@ export default class Landing extends Component<Props, States> {
         );
     }
 
-    updateWindowDimensions() {
+    updateWindowDimensions = () => {
         this.setState({
-            windowHeight: window.innerHeight,
+            windowWidth: window.innerWidth,
         });
-    }
+    };
 
     getImgStatus = (imgUrl: string) => {
         return this.state.loadedImg.includes(imgUrl)
@@ -57,110 +65,26 @@ export default class Landing extends Component<Props, States> {
     };
 
     render() {
+        const { history } = this.props;
+        const { windowWidth } = this.state;
         return (
             <div className="landing-page">
-                <Row className="row1">
-                    <Col xs={3} className="col1">
-                        <div className="buttons">
-                            <p
-                                onClick={() => {
-                                    window.scrollTo({
-                                        top: this.state.windowHeight,
-                                        behavior: "smooth",
-                                    });
-                                }}
-                            >
-                                About
-                            </p>
-                            <p
-                                onClick={() => {
-                                    this.props.history.history.push(
-                                        "/projects/" + classes[0].id
-                                    );
-                                }}
-                            >
-                                Projects
-                            </p>
-                            <p
-                                onClick={() => {
-                                    this.props.history.history.push(
-                                        "/contact"
-                                    );
-                                }}
-                            >
-                                Contact
-                            </p>
-                        </div>
-                    </Col>
-                    <Col xs={9} className="col2">
-                        <img
-                            className={this.getImgStatus(
-                                "/images/landingbg.png"
-                            )}
-                            src="/images/landingbg.png"
-                            alt="/images/landingbg.png"
-                            onLoad={() =>
-                                this.imgLoadedHandler(
-                                    "/images/landingbg.png"
-                                )
-                            }
-                        />
-                        <div className="logo-outer">
-                            <div className="logo-inner">
-                                <img
-                                    className={this.getImgStatus(
-                                        "/images/svgs/logo.svg"
-                                    )}
-                                    src="/images/svgs/logo.svg"
-                                    alt="logo"
-                                    onLoad={() =>
-                                        this.imgLoadedHandler(
-                                            "/images/svgs/logo.svg"
-                                        )
-                                    }
-                                />
-                            </div>
-                        </div>
-                    </Col>
-                </Row>
-                <Row className="row2">
-                    <Col xs={7} className="col1">
-                        <img
-                            className={this.getImgStatus(
-                                "/images/aboutbg.png"
-                            )}
-                            src="/images/aboutbg.png"
-                            alt="aboutbg"
-                            onLoad={() =>
-                                this.imgLoadedHandler(
-                                    "/images/aboutbg.png"
-                                )
-                            }
-                        />
-                    </Col>
-                    <Col xs={5} className="col2">
-                        <div className="text">
-                            <h2>About Us</h2>
-                            <p>
-                                Founded in Taiwan in 2000, GCD
-                                primarily works with multinational
-                                corporate offices, offering Design &
-                                Build services.
-                            </p>
-                            <p>
-                                GCD is a team of professionals
-                                specializing in interior design and
-                                project management that are supported
-                                by its very own in-house builders and
-                                construction team.
-                            </p>
-                        </div>
-                    </Col>
-                </Row>
+                {windowWidth >= 768 ? (
+                    <LandingRow1D history={history} />
+                ) : (
+                    <LandingRow1M history={history} />
+                )}
+
+                {windowWidth >= 768 ? (
+                    <LandingRow2D />
+                ) : (
+                    <LandingRow2M />
+                )}
+
                 <Row className="row3">
                     <Row className="row-classes">
                         {HightLights.map((hl) => (
-                            <Col xs={4}>
+                            <Col xs={12} md={6} lg={4}>
                                 <div
                                     className="work-class"
                                     onClick={() =>

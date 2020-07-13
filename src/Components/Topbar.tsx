@@ -13,7 +13,7 @@ export default class Topbar extends Component<Props> {
         return (
             <div className="topbar">
                 <Row>
-                    <Col xsOffset={1} xs={1} className="flex">
+                    <Col xsOffset={1} xs={2} lg={1} className="flex">
                         <img
                             src="/images/svgs/logo.svg"
                             alt="logo"
@@ -22,7 +22,13 @@ export default class Topbar extends Component<Props> {
                             }
                         />
                     </Col>
-                    <Col xsOffset={6} xs={1} className="link">
+                    <Col
+                        xsOffset={2}
+                        lgOffset={6}
+                        xs={2}
+                        lg={1}
+                        className="link"
+                    >
                         <p
                             onClick={() =>
                                 this.props.history.history.push("/")
@@ -31,7 +37,7 @@ export default class Topbar extends Component<Props> {
                             About
                         </p>
                     </Col>
-                    <Col xs={1} className="link">
+                    <Col xs={2} lg={1} className="link">
                         <p
                             onClick={() =>
                                 this.props.history.history.push(
@@ -42,7 +48,7 @@ export default class Topbar extends Component<Props> {
                             Projects
                         </p>
                     </Col>
-                    <Col xs={1} className="link">
+                    <Col xs={2} lg={1} className="link">
                         <p
                             onClick={() =>
                                 this.props.history.history.push(
