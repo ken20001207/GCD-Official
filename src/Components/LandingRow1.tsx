@@ -38,7 +38,7 @@ export class LandingRow1D extends Component<Props, States> {
 
     updateWindowDimensions() {
         this.setState({
-            windowHeight: window.innerHeight,
+            windowHeight: window.outerHeight,
         });
     }
 
@@ -147,7 +147,7 @@ export class LandingRow1M extends Component<Props, States> {
 
     updateWindowDimensions = () => {
         this.setState({
-            windowHeight: window.innerHeight,
+            windowHeight: window.outerHeight,
         });
     };
 
