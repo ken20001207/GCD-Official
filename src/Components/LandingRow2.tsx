@@ -67,7 +67,7 @@ export class LandingRow2M extends Component<{}, States> {
         return (
             <Row className="row2">
                 <img
-                    src="https://gdc-official-preview.netlify.app/images/aboutbg.png"
+                    src="https://gcd-official-preview.netlify.app/images/aboutbg.png"
                     alt="aboutbg"
                 />
                 <div className="text">

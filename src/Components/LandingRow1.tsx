@@ -92,13 +92,13 @@ export class LandingRow1D extends Component<Props, States> {
                 <Col xs={9} className="col2">
                     <img
                         className={this.getImgStatus(
-                            "https://gdc-official-preview.netlify.app/images/landingbg.png"
+                            "https://gcd-official-preview.netlify.app/images/landingbg.png"
                         )}
-                        src="https://gdc-official-preview.netlify.app/images/landingbg.png"
-                        alt="https://gdc-official-preview.netlify.app/images/landingbg.png"
+                        src="https://gcd-official-preview.netlify.app/images/landingbg.png"
+                        alt="https://gcd-official-preview.netlify.app/images/landingbg.png"
                         onLoad={() =>
                             this.imgLoadedHandler(
-                                "https://gdc-official-preview.netlify.app/images/landingbg.png"
+                                "https://gcd-official-preview.netlify.app/images/landingbg.png"
                             )
                         }
                     />
@@ -106,13 +106,13 @@ export class LandingRow1D extends Component<Props, States> {
                         <div className="logo-inner">
                             <img
                                 className={this.getImgStatus(
-                                    "https://gdc-official-preview.netlify.app/images/svgs/logo.svg"
+                                    "https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
                                 )}
-                                src="https://gdc-official-preview.netlify.app/images/svgs/logo.svg"
+                                src="https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
                                 alt="logo"
                                 onLoad={() =>
                                     this.imgLoadedHandler(
-                                        "https://gdc-official-preview.netlify.app/images/svgs/logo.svg"
+                                        "https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
                                     )
                                 }
                             />
@@ -157,7 +157,7 @@ export class LandingRow1M extends Component<Props, States> {
                 <div className="landing-content">
                     <img
                         className="logo"
-                        src="https://gdc-official-preview.netlify.app/images/svgs/logo.svg"
+                        src="https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
                         alt="logo"
                     />
                     <div className="buttons">

@@ -4,42 +4,42 @@ export const HightLights = [
         name: "church01",
         class: "church",
         coverPhoto:
-            "https://gdc-official-preview.netlify.app/images/works/church-01/1.jpg",
+            "https://gcd-official-preview.netlify.app/images/works/church-01/1.jpg",
     },
     {
         id: "consumer01",
         name: "consumer01",
         class: "consumer",
         coverPhoto:
-            "https://gdc-official-preview.netlify.app/images/works/consumer-01/1.jpg",
+            "https://gcd-official-preview.netlify.app/images/works/consumer-01/1.jpg",
     },
     {
         id: "consumer02",
         name: "consumer02",
         class: "consumer",
         coverPhoto:
-            "https://gdc-official-preview.netlify.app/images/works/consumer-02/1.jpg",
+            "https://gcd-official-preview.netlify.app/images/works/consumer-02/1.jpg",
     },
     {
         id: "consumer03",
         name: "consumer03",
         class: "consumer",
         coverPhoto:
-            "https://gdc-official-preview.netlify.app/images/works/consumer-03/1.jpg",
+            "https://gcd-official-preview.netlify.app/images/works/consumer-03/1.jpg",
     },
     {
         id: "development01",
         name: "development01",
         class: "development",
         coverPhoto:
-            "https://gdc-official-preview.netlify.app/images/works/development-01/1.jpg",
+            "https://gcd-official-preview.netlify.app/images/works/development-01/1.jpg",
     },
     {
         id: "development02",
         name: "development02",
         class: "development",
         coverPhoto:
-            "https://gdc-official-preview.netlify.app/images/works/development-02/1.jpg",
+            "https://gcd-official-preview.netlify.app/images/works/development-02/1.jpg",
     },
 ];
 
@@ -67,7 +67,7 @@ export const works: work[] = [
         name: "church01",
         class: "church",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/church-01",
+            "https://gcd-official-preview.netlify.app/images/works/church-01",
         photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
     },
     {
@@ -75,7 +75,7 @@ export const works: work[] = [
         name: "consumer01",
         class: "consumer",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/consumer-01",
+            "https://gcd-official-preview.netlify.app/images/works/consumer-01",
         photos: [
             "1.jpg",
             "2.jpg",
@@ -96,7 +96,7 @@ export const works: work[] = [
         name: "consumer02",
         class: "consumer",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/consumer-02",
+            "https://gcd-official-preview.netlify.app/images/works/consumer-02",
         photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
     },
     {
@@ -104,7 +104,7 @@ export const works: work[] = [
         name: "consumer03",
         class: "consumer",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/consumer-03",
+            "https://gcd-official-preview.netlify.app/images/works/consumer-03",
         photos: [
             "1.jpg",
             "2.jpg",
@@ -121,7 +121,7 @@ export const works: work[] = [
         name: "development01",
         class: "development",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/development-01",
+            "https://gcd-official-preview.netlify.app/images/works/development-01",
         photos: [
             "1.jpg",
             "2.jpg",
@@ -140,7 +140,7 @@ export const works: work[] = [
         name: "development02",
         class: "development",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/development-02",
+            "https://gcd-official-preview.netlify.app/images/works/development-02",
         photos: ["1.jpg", "2.jpg", "3.jpg"],
     },
     {
@@ -148,7 +148,7 @@ export const works: work[] = [
         name: "development03",
         class: "development",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/development-03",
+            "https://gcd-official-preview.netlify.app/images/works/development-03",
         photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
     },
     {
@@ -156,7 +156,7 @@ export const works: work[] = [
         name: "financial01",
         class: "financial",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/financial-01",
+            "https://gcd-official-preview.netlify.app/images/works/financial-01",
         photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
     },
     {
@@ -164,7 +164,7 @@ export const works: work[] = [
         name: "financial02",
         class: "financial",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/financial-02",
+            "https://gcd-official-preview.netlify.app/images/works/financial-02",
         photos: ["1.jpg", "2.jpg", "3.jpg"],
     },
     {
@@ -172,7 +172,7 @@ export const works: work[] = [
         name: "health01",
         class: "health",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/health-01",
+            "https://gcd-official-preview.netlify.app/images/works/health-01",
         photos: ["1.jpg", "2.jpg"],
     },
     {
@@ -180,7 +180,7 @@ export const works: work[] = [
         name: "hospitality01",
         class: "hospitality",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/hospitality-01",
+            "https://gcd-official-preview.netlify.app/images/works/hospitality-01",
         photos: ["1.jpg", "2.jpg"],
     },
     {
@@ -188,7 +188,7 @@ export const works: work[] = [
         name: "hospitality02",
         class: "hospitality",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/hospitality-02",
+            "https://gcd-official-preview.netlify.app/images/works/hospitality-02",
         photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
     },
     {
@@ -196,7 +196,7 @@ export const works: work[] = [
         name: "office01",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-01",
+            "https://gcd-official-preview.netlify.app/images/works/office-01",
         photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
     },
     {
@@ -204,7 +204,7 @@ export const works: work[] = [
         name: "office02",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-02",
+            "https://gcd-official-preview.netlify.app/images/works/office-02",
         photos: ["1.jpg", "2.jpg"],
     },
     {
@@ -212,7 +212,7 @@ export const works: work[] = [
         name: "office03",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-03",
+            "https://gcd-official-preview.netlify.app/images/works/office-03",
         photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
     },
     {
@@ -220,7 +220,7 @@ export const works: work[] = [
         name: "office04",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-04",
+            "https://gcd-official-preview.netlify.app/images/works/office-04",
         photos: ["1.jpg", "2.jpg"],
     },
     {
@@ -228,7 +228,7 @@ export const works: work[] = [
         name: "office05",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-05",
+            "https://gcd-official-preview.netlify.app/images/works/office-05",
         photos: [
             "1.jpg",
             "2.jpg",
@@ -244,7 +244,7 @@ export const works: work[] = [
         name: "office06",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-06",
+            "https://gcd-official-preview.netlify.app/images/works/office-06",
         photos: ["1.jpg", "2.jpg"],
     },
     {
@@ -252,7 +252,7 @@ export const works: work[] = [
         name: "office07",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-07",
+            "https://gcd-official-preview.netlify.app/images/works/office-07",
         photos: ["1.jpg"],
     },
     {
@@ -260,7 +260,7 @@ export const works: work[] = [
         name: "office08",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-08",
+            "https://gcd-official-preview.netlify.app/images/works/office-08",
         photos: [
             "1.jpg",
             "2.jpg",
@@ -275,7 +275,7 @@ export const works: work[] = [
         name: "office09",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-09",
+            "https://gcd-official-preview.netlify.app/images/works/office-09",
         photos: [
             "1.jpg",
             "2.jpg",
@@ -296,7 +296,7 @@ export const works: work[] = [
         name: "office10",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-10",
+            "https://gcd-official-preview.netlify.app/images/works/office-10",
         photos: ["1.jpg", "2.jpg", "3.jpg"],
     },
     {
@@ -304,7 +304,7 @@ export const works: work[] = [
         name: "office11",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-11",
+            "https://gcd-official-preview.netlify.app/images/works/office-11",
         photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
     },
     {
@@ -312,7 +312,7 @@ export const works: work[] = [
         name: "office12",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-12",
+            "https://gcd-official-preview.netlify.app/images/works/office-12",
         photos: ["1.jpg", "2.jpg", "3.jpg"],
     },
     {
@@ -320,7 +320,7 @@ export const works: work[] = [
         name: "office13",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-13",
+            "https://gcd-official-preview.netlify.app/images/works/office-13",
         photos: ["1.jpg", "2.jpg"],
     },
     {
@@ -328,7 +328,7 @@ export const works: work[] = [
         name: "office14",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-14",
+            "https://gcd-official-preview.netlify.app/images/works/office-14",
         photos: ["1.jpg"],
     },
     {
@@ -336,7 +336,7 @@ export const works: work[] = [
         name: "office15",
         class: "office",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/office-15",
+            "https://gcd-official-preview.netlify.app/images/works/office-15",
         photos: ["1.jpg", "2.jpg"],
     },
     {
@@ -344,7 +344,7 @@ export const works: work[] = [
         name: "residence01",
         class: "residence",
         fileRoot:
-            "https://gdc-official-preview.netlify.app/images/works/residence-01",
+            "https://gcd-official-preview.netlify.app/images/works/residence-01",
         photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
     },
 ];

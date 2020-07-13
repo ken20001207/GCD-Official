@@ -14,36 +14,36 @@
         "id": "church01",
         "name": "church01",
         "class": "church",
-        "coverPhoto": "https://gdc-official-preview.netlify.app/images/works/church-01/1.jpg"
+        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/church-01/1.jpg"
     },
     {
         "id": "consumer01",
         "name": "consumer01",
         "class": "consumer",
-        "coverPhoto": "https://gdc-official-preview.netlify.app/images/works/consumer-01/1.jpg"
+        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/consumer-01/1.jpg"
     },
     {
         "id": "consumer02",
         "name": "consumer02",
         "class": "consumer",
-        "coverPhoto": "https://gdc-official-preview.netlify.app/images/works/consumer-02/1.jpg"
+        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/consumer-02/1.jpg"
     },
     {
         "id": "consumer03",
         "name": "consumer03",
         "class": "consumer",
-        "coverPhoto": "https://gdc-official-preview.netlify.app/images/works/consumer-03/1.jpg"
+        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/consumer-03/1.jpg"
     },
     {
         "id": "development01",
         "name": "development01",
         "class": "development",
-        "coverPhoto": "https://gdc-official-preview.netlify.app/images/works/development-01/1.jpg"
+        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/development-01/1.jpg"
     },
     {
         "id": "development02",
         "name": "development02",
         "class": "development",
-        "coverPhoto": "https://gdc-official-preview.netlify.app/images/works/development-02/1.jpg"
+        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/development-02/1.jpg"
     }
 ]
