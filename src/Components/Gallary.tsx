@@ -18,7 +18,7 @@ export default class Gallary extends Component<Props, States> {
     constructor(props: Readonly<Props>) {
         super(props);
         this.state = {
-            imgNo: 1,
+            imgNo: 0,
             loadedImg: [],
         };
     }
@@ -34,10 +34,10 @@ export default class Gallary extends Component<Props, States> {
         e.stopPropagation();
         this.setState({
             imgNo:
-                imgNo === 1
+                imgNo === 0
                     ? !watchingProject
-                        ? 1
-                        : watchingProject.photonum
+                        ? 0
+                        : watchingProject.photos.length - 1
                     : imgNo - 1,
         });
     };
@@ -48,7 +48,9 @@ export default class Gallary extends Component<Props, States> {
         e.stopPropagation();
         this.setState({
             imgNo:
-                watchingProject?.photonum === imgNo ? 1 : imgNo + 1,
+                imgNo + 1 === watchingProject?.photos.length
+                    ? 0
+                    : imgNo + 1,
         });
     };
 
@@ -67,29 +69,37 @@ export default class Gallary extends Component<Props, States> {
     render() {
         const { watchingProject } = this.props;
         const { imgNo } = this.state;
-        const imgUrl =
-            watchingProject?.fileRoot + "/" + imgNo + ".jpg";
-        return (
-            <div className="gallary" onClick={this.closeGallary}>
-                <Row className="row">
-                    <Col xs={2} className="flex">
-                        <p onClick={this.prevImage}>{"<"}</p>
-                    </Col>
-                    <Col xs={8} className="flex">
-                        <img
-                            className={this.getImageStatus(imgUrl)}
-                            src={imgUrl}
-                            alt={imgUrl}
-                            onLoad={() =>
-                                this.imgLoadedHandler(imgUrl)
-                            }
-                        />
-                    </Col>
-                    <Col xs={2} className="flex">
-                        <p onClick={this.nextImage}>{">"}</p>
-                    </Col>
-                </Row>
-            </div>
-        );
+        if (watchingProject !== undefined) {
+            const imgUrl =
+                watchingProject.fileRoot +
+                "/" +
+                watchingProject.photos[imgNo];
+            return (
+                <div className="gallary" onClick={this.closeGallary}>
+                    <Row className="row">
+                        <Col xs={2} className="flex">
+                            <p onClick={this.prevImage}>{"<"}</p>
+                        </Col>
+                        <Col xs={8} className="flex">
+                            <img
+                                className={this.getImageStatus(
+                                    imgUrl
+                                )}
+                                src={imgUrl}
+                                alt={imgUrl}
+                                onLoad={() =>
+                                    this.imgLoadedHandler(imgUrl)
+                                }
+                            />
+                        </Col>
+                        <Col xs={2} className="flex">
+                            <p onClick={this.nextImage}>{">"}</p>
+                        </Col>
+                    </Row>
+                </div>
+            );
+        } else {
+            return <div />;
+        }
     }
 }

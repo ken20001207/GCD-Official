@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Row } from "react-flexbox-grid";
 import { RouteComponentProps } from "react-router-dom";
 import Footer from "../Components/Footer";
-import { HightLights } from "../data";
+import { classes, HightLights } from "../data";
 import "../Styles/Landing.less";
 
 interface Props {
@@ -75,7 +75,7 @@ export default class Landing extends Component<Props, States> {
                             <p
                                 onClick={() => {
                                     this.props.history.history.push(
-                                        "/projects/office"
+                                        "/projects/" + classes[0].id
                                     );
                                 }}
                             >
@@ -109,13 +109,13 @@ export default class Landing extends Component<Props, States> {
                             <div className="logo-inner">
                                 <img
                                     className={this.getImgStatus(
-                                        "/images/logo.svg"
+                                        "/images/svgs/logo.svg"
                                     )}
-                                    src="/images/logo.svg"
+                                    src="/images/svgs/logo.svg"
                                     alt="logo"
                                     onLoad={() =>
                                         this.imgLoadedHandler(
-                                            "/images/logo.svg"
+                                            "/images/svgs/logo.svg"
                                         )
                                     }
                                 />

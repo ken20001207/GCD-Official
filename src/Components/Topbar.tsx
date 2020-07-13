@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Col, Row } from "react-flexbox-grid";
 import { RouteChildrenProps } from "react-router-dom";
+import { classes } from "../data";
 import "../Styles/Topbar.less";
 
 interface Props {
@@ -14,7 +15,7 @@ export default class Topbar extends Component<Props> {
                 <Row>
                     <Col xsOffset={1} xs={1} className="flex">
                         <img
-                            src="/images/logo.svg"
+                            src="/images/svgs/logo.svg"
                             alt="logo"
                             onClick={() =>
                                 this.props.history.history.push("/")
@@ -34,7 +35,7 @@ export default class Topbar extends Component<Props> {
                         <p
                             onClick={() =>
                                 this.props.history.history.push(
-                                    "/projects"
+                                    "/projects/" + classes[0].id
                                 )
                             }
                         >
