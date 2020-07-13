@@ -96,6 +96,7 @@ export default class Projects extends Component<Props, State> {
                                     )
                                     .map((wk) => (
                                         <ProjectBlock
+                                            key={wk.id}
                                             openGallary={() =>
                                                 this.openGallary(
                                                     history,

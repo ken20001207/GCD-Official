@@ -32,12 +32,12 @@ export default class ProjectBlock extends Component<Props, States> {
                         <p>{work.name}</p>
                     </div>
                     <img
-                        className={imgLoaded ? "" : "loading"}
+                        className={imgLoaded ? "loaded" : "loading"}
                         src={work.fileRoot + "/1.jpg"}
                         alt={work.fileRoot + "/1.jpg"}
-                        onLoad={() =>
-                            this.setState({ imgLoaded: true })
-                        }
+                        onLoad={() => {
+                            this.setState({ imgLoaded: true });
+                        }}
                     />
                 </div>
             </Col>
