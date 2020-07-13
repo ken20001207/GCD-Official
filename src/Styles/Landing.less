@@ -3,6 +3,7 @@
         margin: 0;
         width: 100%;
         height: 100vh;
+        overflow: hidden;
 
         .col1 {
             display: flex;
@@ -26,7 +27,6 @@
         }
 
         .col2 {
-            background-image: url("/images/landingbg.png");
             .logo-outer {
                 position: absolute;
                 top: 20vh;
@@ -93,6 +93,13 @@
                 height: 320px;
                 background-size: cover;
                 background-position: center;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: bottom;
+                }
 
                 .overlay {
                     cursor: pointer;

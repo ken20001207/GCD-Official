@@ -11,12 +11,13 @@ interface Props {
 
 interface States {
     windowHeight: number;
+    loadedImg: string[];
 }
 
 export default class Landing extends Component<Props, States> {
     constructor(props: Readonly<Props>) {
         super(props);
-        this.state = { windowHeight: 0 };
+        this.state = { windowHeight: 0, loadedImg: [] };
         this.updateWindowDimensions = this.updateWindowDimensions.bind(
             this
         );
@@ -42,6 +43,18 @@ export default class Landing extends Component<Props, States> {
             windowHeight: window.innerHeight,
         });
     }
+
+    getImgStatus = (imgUrl: string) => {
+        return this.state.loadedImg.includes(imgUrl)
+            ? "loaded"
+            : "loading";
+    };
+
+    imgLoadedHandler = (imgUrl: string) => {
+        this.setState({
+            loadedImg: [...this.state.loadedImg, imgUrl],
+        });
+    };
 
     render() {
         return (
@@ -80,11 +93,31 @@ export default class Landing extends Component<Props, States> {
                         </div>
                     </Col>
                     <Col xs={9} className="col2">
+                        <img
+                            className={this.getImgStatus(
+                                "/images/landingbg.png"
+                            )}
+                            src="/images/landingbg.png"
+                            alt="/images/landingbg.png"
+                            onLoad={() =>
+                                this.imgLoadedHandler(
+                                    "/images/landingbg.png"
+                                )
+                            }
+                        />
                         <div className="logo-outer">
                             <div className="logo-inner">
                                 <img
+                                    className={this.getImgStatus(
+                                        "/images/logo.svg"
+                                    )}
                                     src="/images/logo.svg"
                                     alt="logo"
+                                    onLoad={() =>
+                                        this.imgLoadedHandler(
+                                            "/images/logo.svg"
+                                        )
+                                    }
                                 />
                             </div>
                         </div>
@@ -93,8 +126,16 @@ export default class Landing extends Component<Props, States> {
                 <Row className="row2">
                     <Col xs={7} className="col1">
                         <img
+                            className={this.getImgStatus(
+                                "/images/aboutbg.png"
+                            )}
                             src="/images/aboutbg.png"
                             alt="aboutbg"
+                            onLoad={() =>
+                                this.imgLoadedHandler(
+                                    "/images/aboutbg.png"
+                                )
+                            }
                         />
                     </Col>
                     <Col xs={5} className="col2">
@@ -130,13 +171,19 @@ export default class Landing extends Component<Props, States> {
                                                 hl.id
                                         )
                                     }
-                                    style={{
-                                        backgroundImage:
-                                            "url(" +
-                                            hl.coverPhoto +
-                                            ")",
-                                    }}
                                 >
+                                    <img
+                                        src={hl.coverPhoto}
+                                        className={this.getImgStatus(
+                                            hl.coverPhoto
+                                        )}
+                                        alt={hl.coverPhoto}
+                                        onLoad={() =>
+                                            this.imgLoadedHandler(
+                                                hl.coverPhoto
+                                            )
+                                        }
+                                    />
                                     <div className="overlay">
                                         <p>{hl.name}</p>
                                     </div>

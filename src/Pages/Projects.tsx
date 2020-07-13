@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Col, Row } from "react-flexbox-grid";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import {
     BrowserRouter,
     Route,
     RouteChildrenProps,
+    RouteComponentProps,
 } from "react-router-dom";
 import Footer from "../Components/Footer";
+import Gallary from "../Components/Gallary";
+import ProjectBlock from "../Components/ProjectBlock";
 import Topbar from "../Components/Topbar";
 import { classes, work, works } from "../data";
 import "../Styles/Project.less";
@@ -18,7 +19,6 @@ interface Props {
 
 interface State {
     watchingProject: work | undefined;
-    imageNo: number;
 }
 
 export default class Projects extends Component<Props, State> {
@@ -26,7 +26,6 @@ export default class Projects extends Component<Props, State> {
         super(props);
         this.state = {
             watchingProject: undefined,
-            imageNo: 1,
         };
     }
 
@@ -36,12 +35,18 @@ export default class Projects extends Component<Props, State> {
                 if (wk.id === window.location.pathname.split("/")[3])
                     this.setState({
                         watchingProject: wk,
-                        imageNo: 1,
                     });
                 return null;
             });
         }
     }
+
+    openGallary = (history: RouteComponentProps, work: work) => {
+        history.history.push(
+            "/projects/" + work.class + "/" + work.id
+        );
+        this.setState({ watchingProject: work });
+    };
 
     render() {
         return (
@@ -59,9 +64,6 @@ export default class Projects extends Component<Props, State> {
                                             history.history.push(
                                                 "/projects/" + cl.id
                                             );
-                                            this.setState({
-                                                imageNo: 1,
-                                            });
                                         }}
                                     >
                                         <p
@@ -93,32 +95,15 @@ export default class Projects extends Component<Props, State> {
                                             )[2]
                                     )
                                     .map((wk) => (
-                                        <Col xs={4}>
-                                            <div
-                                                className="work-class"
-                                                style={{
-                                                    backgroundImage:
-                                                        "url(" +
-                                                        wk.fileRoot +
-                                                        "/1.jpg)",
-                                                }}
-                                                onClick={() => {
-                                                    history.history.push(
-                                                        "/projects/" +
-                                                            wk.class +
-                                                            "/" +
-                                                            wk.id
-                                                    );
-                                                    this.setState({
-                                                        watchingProject: wk,
-                                                    });
-                                                }}
-                                            >
-                                                <div className="description flex">
-                                                    <p>{wk.name}</p>
-                                                </div>
-                                            </div>
-                                        </Col>
+                                        <ProjectBlock
+                                            openGallary={() =>
+                                                this.openGallary(
+                                                    history,
+                                                    wk
+                                                )
+                                            }
+                                            work={wk}
+                                        />
                                     ))}
                             </Row>
                         )}
@@ -126,89 +111,12 @@ export default class Projects extends Component<Props, State> {
                     <Route
                         path="/projects/:class/:project"
                         render={(history) => (
-                            <div
-                                className="workimages"
-                                onClick={() => {
-                                    history.history.push(
-                                        "/prjects/" +
-                                            this.state.watchingProject
-                                                ?.class
-                                    );
-                                }}
-                            >
-                                <Row className="row3">
-                                    <Col xs={2} className="flex">
-                                        <p
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                this.setState({
-                                                    imageNo:
-                                                        this.state
-                                                            .imageNo ===
-                                                        1
-                                                            ? !this
-                                                                  .state
-                                                                  .watchingProject
-                                                                ? 1
-                                                                : this
-                                                                      .state
-                                                                      .watchingProject
-                                                                      .photonum
-                                                            : this
-                                                                  .state
-                                                                  .imageNo -
-                                                              1,
-                                                });
-                                            }}
-                                        >
-                                            {"<"}
-                                        </p>
-                                    </Col>
-                                    <Col xs={8} className="flex">
-                                        <LazyLoadImage
-                                            effect="blur"
-                                            src={
-                                                this.state
-                                                    .watchingProject
-                                                    ?.fileRoot +
-                                                "/" +
-                                                this.state.imageNo +
-                                                ".jpg"
-                                            }
-                                            alt={
-                                                this.state
-                                                    .watchingProject
-                                                    ?.fileRoot +
-                                                "/" +
-                                                this.state.imageNo +
-                                                ".jpg"
-                                            }
-                                        />
-                                    </Col>
-                                    <Col xs={2} className="flex">
-                                        <p
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                this.setState({
-                                                    imageNo:
-                                                        this.state
-                                                            .watchingProject
-                                                            ?.photonum ===
-                                                        this.state
-                                                            .imageNo
-                                                            ? 1
-                                                            : this
-                                                                  .state
-                                                                  .imageNo +
-                                                              1,
-                                                });
-                                            }}
-                                        >
-                                            {">"}
-                                        </p>
-                                    </Col>
-                                </Row>
-                            </div>
+                            <Gallary
+                                history={history}
+                                watchingProject={
+                                    this.state.watchingProject
+                                }
+                            />
                         )}
                     />
                 </BrowserRouter>
