@@ -1,11 +1,50 @@
 .contact-page {
-    .row1 {
-        margin: 0;
-        height: 100vh;
-        width: 100%;
+    .bg {
+        position: relative;
+        top: 0;
         img {
+            width: 100%;
+            height: 100vh;
             object-fit: cover;
             object-position: center;
+            background-color: black;
+        }
+    }
+
+    .container {
+        border-radius: 18px;
+        position: absolute;
+        padding: 80px 120px;
+        top: 0;
+        width: 70%;
+        margin: 20vh 15%;
+        height: 70vh;
+        background-color: white;
+
+        .companyname {
+            height: 64px;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .right {
+            margin-left: 72px;
+            .info-row {
+                margin-top: 36px;
+                img {
+                    width: 36px;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        .central {
+            display: flex;
+            align-content: center;
+        }
+
+        .map {
+            width: 100%;
         }
     }
 }
