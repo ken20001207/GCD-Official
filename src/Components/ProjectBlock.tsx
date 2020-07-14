@@ -23,15 +23,13 @@ export default class ProjectBlock extends Component<Props, States> {
         const { openGallary, work } = this.props;
         const { imgLoaded } = this.state;
         return (
-            <Col xs={12} md={6} lg={4}>
-                <div
-                    className="work-class"
-                    onClick={() => openGallary()}
-                >
+            <Col xs={12} md={6} lg={4} style={{ marginBottom: 64 }}>
+                <div className="work-class">
                     <div className="description flex">
                         <p>{work.name}</p>
                     </div>
                     <img
+                        onClick={() => openGallary()}
                         className={imgLoaded ? "loaded" : "loading"}
                         src={work.fileRoot + "/1.jpg"}
                         alt={work.fileRoot + "/1.jpg"}
