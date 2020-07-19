@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Col } from "react-flexbox-grid";
-import { work } from "../data";
+import { work } from "../types";
 
 interface Props {
     work: work;

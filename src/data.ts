@@ -1,3 +1,5 @@
+import { work } from "./types";
+
 export const HightLights = [
     {
         id: "we_will_share_association",
@@ -46,14 +48,6 @@ export const classes = [
     { title: "Residential", id: "residential" },
     { title: "Religious", id: "religious" },
 ];
-
-export interface work {
-    id: string;
-    name: string;
-    class: string;
-    fileRoot: string;
-    photos: string[];
-}
 
 export const works: work[] = [
     {

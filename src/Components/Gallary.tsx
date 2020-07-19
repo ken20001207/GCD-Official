@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-flexbox-grid";
 import { RouteComponentProps } from "react-router-dom";
-import { work } from "../data";
 import "../Styles/Gallary.less";
+import { work } from "../types";
 
 const Gallary = (props: { history: RouteComponentProps; watchingProject: work | undefined }) => {
     const [loadedImg, setLoadedImg] = useState<string[]>([]);

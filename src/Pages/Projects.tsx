@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-flexbox-grid";
 import { BrowserRouter, Route, RouteComponentProps } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Gallary from "../Components/Gallary";
 import ProjectBlock from "../Components/ProjectBlock";
 import Topbar from "../Components/Topbar";
-import { classes, work, works } from "../data";
+import { classes, works } from "../data";
 import "../Styles/Project.less";
+import { work } from "../types";
 
 const Projects = () => {
     const [watchingProject, setWatchingProject] = useState<work | undefined>(undefined);
