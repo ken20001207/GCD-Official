@@ -1,18 +1,9 @@
-/** 
-
-{
-    "title": "Office" // title 是顯示在網站的類別名,
-    "id": "office"  // id 是用在網址列的，不可以有空格或符號，不區分大小寫
-}
-
-*/
-
 [
-    { "title": "Office", "id": "office" },
-    { "title": "Financial", "id": "financial" },
+    { "title": "Workplace", "id": "Workplace" },
+    { "title": "Financial Services", "id": "Financial Services" },
     { "title": "Hospitality", "id": "hospitality" },
-    { "title": "Consumer", "id": "consumer" },
-    { "title": "Health", "id": "health" },
-    { "title": "Development", "id": "development" },
-    { "title": "Church", "id": "church" }
+    { "title": "Retail", "id": "Retail" },
+    { "title": "Healthcare", "id": "Healthcare" },
+    { "title": "Residential", "id": "Residential" },
+    { "title": "Religious", "id": "Religious" }
 ]

@@ -1,197 +1,112 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-flexbox-grid";
-import { RouteComponentProps } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { classes } from "../data";
 
-interface Props {
-    history: RouteComponentProps;
-}
+export const LandingRow1D = () => {
+    const [windowHeight, setWindowHeight] = useState(0);
+    const [loadedImg, setLoadedImg] = useState<string[]>([]);
 
-interface States {
-    windowHeight: number;
-    loadedImg: string[];
-}
+    useEffect(() => {
+        updateWindowDimensions();
+        window.addEventListener("resize", updateWindowDimensions);
+    });
 
-export class LandingRow1D extends Component<Props, States> {
-    constructor(props: Readonly<Props>) {
-        super(props);
-        this.state = { windowHeight: 0, loadedImg: [] };
-        this.updateWindowDimensions = this.updateWindowDimensions.bind(
-            this
-        );
-    }
-
-    componentDidMount() {
-        this.updateWindowDimensions();
-        window.addEventListener(
-            "resize",
-            this.updateWindowDimensions
-        );
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener(
-            "resize",
-            this.updateWindowDimensions
-        );
-    }
-
-    updateWindowDimensions() {
-        this.setState({
-            windowHeight: window.outerHeight,
-        });
-    }
-
-    getImgStatus = (imgUrl: string) => {
-        return this.state.loadedImg.includes(imgUrl)
-            ? "loaded"
-            : "loading";
+    const updateWindowDimensions = () => {
+        setWindowHeight(window.outerHeight);
     };
 
-    imgLoadedHandler = (imgUrl: string) => {
-        this.setState({
-            loadedImg: [...this.state.loadedImg, imgUrl],
-        });
+    const getImgStatus = (imgUrl: string) => {
+        return loadedImg.includes(imgUrl) ? "loaded" : "loading";
     };
 
-    render() {
-        return (
-            <Row className="row1">
-                <Col xs={3} className="col1">
-                    <div className="buttons">
-                        <p
-                            onClick={() => {
-                                window.scrollTo({
-                                    top: this.state.windowHeight,
-                                    behavior: "smooth",
-                                });
-                            }}
-                        >
-                            About
-                        </p>
-                        <p
-                            onClick={() => {
-                                this.props.history.history.push(
-                                    "/projects/" + classes[0].id
-                                );
-                            }}
-                        >
-                            Projects
-                        </p>
-                        <p
-                            onClick={() => {
-                                this.props.history.history.push(
-                                    "/contact"
-                                );
-                            }}
-                        >
-                            Contact
-                        </p>
-                    </div>
-                </Col>
-                <Col xs={9} className="col2">
-                    <img
-                        className={this.getImgStatus(
-                            "https://gcd-official-preview.netlify.app/images/landingbg.png"
-                        )}
-                        src="https://gcd-official-preview.netlify.app/images/landingbg.png"
-                        alt="https://gcd-official-preview.netlify.app/images/landingbg.png"
-                        onLoad={() =>
-                            this.imgLoadedHandler(
-                                "https://gcd-official-preview.netlify.app/images/landingbg.png"
-                            )
-                        }
-                    />
-                    <div className="logo-outer">
-                        <div className="logo-inner">
-                            <img
-                                className={this.getImgStatus(
-                                    "https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
-                                )}
-                                src="https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
-                                alt="logo"
-                                onLoad={() =>
-                                    this.imgLoadedHandler(
-                                        "https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
-                                    )
-                                }
-                            />
-                        </div>
-                    </div>
-                </Col>
-            </Row>
-        );
-    }
-}
-
-export class LandingRow1M extends Component<Props, States> {
-    constructor(props: Readonly<Props>) {
-        super(props);
-        this.state = { windowHeight: 0, loadedImg: [] };
-    }
-
-    componentDidMount() {
-        this.updateWindowDimensions();
-        window.addEventListener(
-            "resize",
-            this.updateWindowDimensions
-        );
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener(
-            "resize",
-            this.updateWindowDimensions
-        );
-    }
-
-    updateWindowDimensions = () => {
-        this.setState({
-            windowHeight: window.outerHeight,
-        });
+    const imgLoadedHandler = (imgUrl: string) => {
+        setLoadedImg([...loadedImg, imgUrl]);
     };
 
-    render() {
-        return (
-            <Row className="row1 flex">
-                <div className="landing-content">
-                    <img
-                        className="logo"
-                        src="https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
-                        alt="logo"
-                    />
-                    <div className="buttons">
-                        <p
-                            onClick={() => {
-                                window.scrollTo({
-                                    top: this.state.windowHeight,
-                                    behavior: "smooth",
-                                });
-                            }}
-                        >
-                            About
-                        </p>
-                        <p
-                            onClick={() => {
-                                this.props.history.history.push(
-                                    "/projects/" + classes[0].id
-                                );
-                            }}
-                        >
-                            Projects
-                        </p>
-                        <p
-                            onClick={() => {
-                                this.props.history.history.push(
-                                    "/contact"
-                                );
-                            }}
-                        >
-                            Contact
-                        </p>
+    return (
+        <Row className="row1">
+            <Col xs={3} className="col1">
+                <div className="buttons">
+                    <p
+                        onClick={() => {
+                            window.scrollTo({
+                                top: windowHeight,
+                                behavior: "smooth",
+                            });
+                        }}
+                    >
+                        About
+                    </p>
+                    <Link to={"/projects/" + classes[0].id}>
+                        <p>Projects</p>
+                    </Link>
+
+                    <Link to="/contact">
+                        {" "}
+                        <p>Contact</p>
+                    </Link>
+                </div>
+            </Col>
+            <Col xs={9} className="col2">
+                <img
+                    className={getImgStatus("https://gcd-official-preview.netlify.app/images/landingbg.png")}
+                    src="https://gcd-official-preview.netlify.app/images/landingbg.png"
+                    alt="https://gcd-official-preview.netlify.app/images/landingbg.png"
+                    onLoad={() => imgLoadedHandler("https://gcd-official-preview.netlify.app/images/landingbg.png")}
+                />
+                <div className="logo-outer">
+                    <div className="logo-inner">
+                        <img
+                            className={getImgStatus("https://gcd-official-preview.netlify.app/images/svgs/logo.svg")}
+                            src="https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
+                            alt="logo"
+                            onLoad={() => imgLoadedHandler("https://gcd-official-preview.netlify.app/images/svgs/logo.svg")}
+                        />
                     </div>
                 </div>
-            </Row>
-        );
-    }
-}
+            </Col>
+        </Row>
+    );
+};
+
+export const LandingRow1M = () => {
+    const [windowHeight, setWindowHeight] = useState(0);
+
+    useEffect(() => {
+        updateWindowDimensions();
+        window.addEventListener("resize", updateWindowDimensions);
+    });
+
+    const updateWindowDimensions = () => {
+        setWindowHeight(window.outerHeight);
+    };
+
+    return (
+        <Row className="row1 flex">
+            <div className="landing-content">
+                <img className="logo" src="https://gcd-official-preview.netlify.app/images/svgs/logo.svg" alt="logo" />
+                <div className="buttons">
+                    <p
+                        onClick={() => {
+                            window.scrollTo({
+                                top: windowHeight,
+                                behavior: "smooth",
+                            });
+                        }}
+                    >
+                        About
+                    </p>
+                    <Link to={"/projects/" + classes[0].id}>
+                        <p>Projects</p>
+                    </Link>
+
+                    <Link to="/contact">
+                        {" "}
+                        <p>Contact</p>
+                    </Link>
+                </div>
+            </div>
+        </Row>
+    );
+};

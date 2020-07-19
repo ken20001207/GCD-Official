@@ -1,123 +1,61 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-flexbox-grid";
-import { RouteComponentProps } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
-import {
-    LandingRow1D,
-    LandingRow1M,
-} from "../Components/LandingRow1";
-import {
-    LandingRow2D,
-    LandingRow2M,
-} from "../Components/LandingRow2";
+import { LandingRow1D, LandingRow1M } from "../Components/LandingRow1";
+import { LandingRow2D, LandingRow2M } from "../Components/LandingRow2";
 import { HightLights } from "../data";
 import "../Styles/Landing.less";
 
-interface Props {
-    history: RouteComponentProps;
-}
+const Landing = () => {
+    const [loadedImg, setLoadedImg] = useState<string[]>([]);
+    const [windowWidth, setWindowWidth] = useState(0);
 
-interface States {
-    windowWidth: number;
-    loadedImg: string[];
-}
+    useEffect(() => {
+        updateWindowDimensions();
+        window.addEventListener("resize", updateWindowDimensions);
+    });
 
-export default class Landing extends Component<Props, States> {
-    constructor(props: Readonly<Props>) {
-        super(props);
-        this.state = {
-            windowWidth: 0,
-            loadedImg: [],
-        };
-    }
-
-    componentDidMount() {
-        this.updateWindowDimensions();
-        window.addEventListener(
-            "resize",
-            this.updateWindowDimensions
-        );
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener(
-            "resize",
-            this.updateWindowDimensions
-        );
-    }
-
-    updateWindowDimensions = () => {
-        this.setState({
-            windowWidth: window.innerWidth,
-        });
+    const getImgStatus = (imgUrl: string) => {
+        return loadedImg.includes(imgUrl) ? "loaded" : "loading";
     };
 
-    getImgStatus = (imgUrl: string) => {
-        return this.state.loadedImg.includes(imgUrl)
-            ? "loaded"
-            : "loading";
+    const imgLoadedHandler = (imgUrl: string) => {
+        setLoadedImg([...loadedImg, imgUrl]);
     };
 
-    imgLoadedHandler = (imgUrl: string) => {
-        this.setState({
-            loadedImg: [...this.state.loadedImg, imgUrl],
-        });
+    const updateWindowDimensions = () => {
+        setWindowWidth(window.innerWidth);
     };
 
-    render() {
-        const { history } = this.props;
-        const { windowWidth } = this.state;
-        return (
-            <div className="landing-page">
-                {windowWidth >= 768 ? (
-                    <LandingRow1D history={history} />
-                ) : (
-                    <LandingRow1M history={history} />
-                )}
-
-                {windowWidth >= 768 ? (
-                    <LandingRow2D />
-                ) : (
-                    <LandingRow2M />
-                )}
-
-                <Row className="row3">
-                    <Row className="row-classes">
-                        {HightLights.map((hl) => (
-                            <Col xs={12} md={6} lg={4}>
-                                <div
-                                    className="work-class"
-                                    onClick={() =>
-                                        this.props.history.history.push(
-                                            "/projects/" +
-                                                hl.class +
-                                                "/" +
-                                                hl.id
-                                        )
-                                    }
-                                >
+    return (
+        <div className="landing-page">
+            {windowWidth >= 768 ? <LandingRow1D /> : <LandingRow1M />}
+            {windowWidth >= 768 ? <LandingRow2D /> : <LandingRow2M />}
+            <Row className="row3">
+                <Row className="row-classes">
+                    {HightLights.map((hl) => (
+                        <Col xs={12} md={6} lg={4}>
+                            <Link to={"/projects/" + hl.class + "/" + hl.id}>
+                                <div className="work-class">
                                     <img
                                         src={hl.coverPhoto}
-                                        className={this.getImgStatus(
-                                            hl.coverPhoto
-                                        )}
+                                        className={getImgStatus(hl.coverPhoto)}
                                         alt={hl.coverPhoto}
-                                        onLoad={() =>
-                                            this.imgLoadedHandler(
-                                                hl.coverPhoto
-                                            )
-                                        }
+                                        onLoad={() => imgLoadedHandler(hl.coverPhoto)}
                                     />
                                     <div className="overlay">
                                         <p>{hl.name}</p>
                                     </div>
                                 </div>
-                            </Col>
-                        ))}
-                    </Row>
+                            </Link>
+                        </Col>
+                    ))}
                 </Row>
-                <Footer />
-            </div>
-        );
-    }
-}
+            </Row>
+            <Footer />
+        </div>
+    );
+};
+
+export default Landing;

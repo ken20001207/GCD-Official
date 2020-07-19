@@ -31,7 +31,7 @@ export default class ProjectBlock extends Component<Props, States> {
                     <img
                         onClick={() => openGallary()}
                         className={imgLoaded ? "loaded" : "loading"}
-                        src={work.fileRoot + "/1.jpg"}
+                        src={work.fileRoot + "/" + work.photos[0]}
                         alt={work.fileRoot + "/1.jpg"}
                         onLoad={() => {
                             this.setState({ imgLoaded: true });

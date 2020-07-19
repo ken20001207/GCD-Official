@@ -1,49 +1,38 @@
-/** 
-
-{
-        "id": "church01", // id 是這個 highlight 的 project id，對應 works.json 的 id
-        "name": "church01", // name 是顯示在網站的名稱
-        "class": "church", // class 是這個 highlight 的 class id，對應 classes.json 的 id
-        "coverPhoto": "/images/works/church-01/1.jpg" // coverPhoto 是這個 highlight 顯示的圖片網址
-}
-
-*/
-
 [
     {
-        "id": "church01",
-        "name": "church01",
-        "class": "church",
-        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/church-01/1.jpg"
+        "id": "religious",
+        "name": "Religious",
+        "class": "religious",
+        "coverPhoto": "https://i.imgur.com/K8fggeU.jpg"
     },
     {
-        "id": "consumer01",
-        "name": "consumer01",
-        "class": "consumer",
-        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/consumer-01/1.jpg"
+        "id": "department_stores",
+        "name": "Department Stores",
+        "class": "retail",
+        "coverPhoto": "https://i.imgur.com/olcWslx.jpg"
     },
     {
-        "id": "consumer02",
-        "name": "consumer02",
-        "class": "consumer",
-        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/consumer-02/1.jpg"
+        "id": "workplace",
+        "name": "Workplace",
+        "class": "workplace",
+        "coverPhoto": "https://i.imgur.com/2yctxq9.jpg"
     },
     {
-        "id": "consumer03",
-        "name": "consumer03",
-        "class": "consumer",
-        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/consumer-03/1.jpg"
+        "id": "retail_centers",
+        "name": "Retail centers",
+        "class": "retail",
+        "coverPhoto": "https://i.imgur.com/lCb2tIp.jpg"
     },
     {
-        "id": "development01",
-        "name": "development01",
-        "class": "development",
-        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/development-01/1.jpg"
+        "id": "residential",
+        "name": "Residential",
+        "class": "residential",
+        "coverPhoto": "https://i.imgur.com/j8PMVp8.jpg"
     },
     {
-        "id": "development02",
-        "name": "development02",
-        "class": "development",
-        "coverPhoto": "https://gcd-official-preview.netlify.app/images/works/development-02/1.jpg"
+        "id": "hospitality_interiors",
+        "name": "Hospitality Interiors",
+        "class": "hospitality_interiors",
+        "coverPhoto": "https://i.imgur.com/Y0YvRb9.jpg"
     }
 ]
