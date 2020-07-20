@@ -47,9 +47,17 @@ export const classes = [
     { title: "Healthcare", id: "healthcare" },
     { title: "Residential", id: "residential" },
     { title: "Religious", id: "religious" },
+    { title: "Residence", id: "residence" },
 ];
 
 export const works: work[] = [
+    {
+        id: "residence",
+        name: "RESIDENCE",
+        class: "residence",
+        fileRoot: "https://i.imgur.com",
+        photos: ["nfuJUXO.jpg", "AkSmG2q.jpg", "DeBvGZD.jpg", "T8yk5Ji.jpg", "6EJnX5W.jpg"],
+    },
     {
         id: "we_will_share_association",
         name: "WE WILL SHARE ASSOCIATION",
@@ -281,12 +289,5 @@ export const works: work[] = [
         class: "workplace",
         fileRoot: "https://i.imgur.com",
         photos: ["0Ku0xhT.jpg", "SFnSE0Z.jpg"],
-    },
-    {
-        id: "residence01",
-        name: "residence01",
-        class: "residence",
-        fileRoot: "https://i.imgur.com",
-        photos: ["nfuJUXO.jpg", "AkSmG2q.jpg", "DeBvGZD.jpg", "T8yk5Ji.jpg", "6EJnX5W.jpg"],
     },
 ];

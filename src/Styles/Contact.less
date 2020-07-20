@@ -2,7 +2,8 @@
 
 .contact-page {
     .bg {
-        background-image: url(https://gcd-official-preview.netlify.app/images/contactbg.png);
+        background-image: url(/images/contactbg.png);
+        min-height: 100vh;
 
         .container-outer {
             width: 100%;
@@ -22,7 +23,7 @@
                 }
                 @media (min-width: @md) {
                     padding: 60px 120px;
-                    margin: 20vh 0;
+                    margin: 25vh 0;
                     border-radius: 18px;
                 }
                 top: 0;
@@ -39,24 +40,17 @@
                     }
                 }
 
-                .companyname {
-                    font-size: 24px;
-                    margin-bottom: 24px;
-                }
-
                 .right {
                     .info-row {
                         margin-top: 36px;
+                        p {
+                            margin: 0;
+                        }
                         img {
-                            width: 36px;
-                            object-fit: contain;
+                            width: 40px;
+                            height: 40px;
                         }
                     }
-                }
-
-                .central {
-                    display: flex;
-                    align-content: center;
                 }
 
                 .map {

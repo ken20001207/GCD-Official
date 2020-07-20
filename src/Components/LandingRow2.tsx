@@ -42,7 +42,7 @@ export const LandingRow2D = () => {
 export const LandingRow2M = () => {
     return (
         <Row className="row2">
-            <img src="https://gcd-official-preview.netlify.app/images/aboutbg.png" alt="aboutbg" />
+            <img src="/images/aboutbg.png" alt="aboutbg" />
             <div className="text">
                 <h2>About Us</h2>
                 <p>

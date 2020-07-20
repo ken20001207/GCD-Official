@@ -14,18 +14,15 @@ const Contact = () => {
                         <div className="container">
                             <Row>
                                 <Col xs={12} md={6}>
-                                    <Row className="flex companyname">
-                                        <p>立石室內裝修設計工程股份有限公司</p>
-                                    </Row>
                                     <img className="map" src="/images/map.png" alt="/images/map.png" />
                                 </Col>
                                 <Col xs={12} mdOffset={1} md={5} className="right">
-                                    <h4>PRIMARY CONTACTS</h4>{" "}
+                                    <h4>PRIMARY CONTACTS</h4>
                                     <Row className="info-row">
-                                        <Col xs={2} className="central">
+                                        <Col xs={2}>
                                             <img src="/images/svgs/phone.svg" alt="/images/svgs/phone.svg" />
                                         </Col>
-                                        <Col xs={10} className="central">
+                                        <Col xs={10}>
                                             <p>
                                                 TEL: +(8862) 2356-4560 <br />
                                                 FAX: +(8862) 2362-0277
@@ -33,18 +30,18 @@ const Contact = () => {
                                         </Col>
                                     </Row>
                                     <Row className="info-row">
-                                        <Col xs={2} className="central">
+                                        <Col xs={2}>
                                             <img src="/images/svgs/mail.svg" alt="/images/svgs/mail.svg" />
                                         </Col>
-                                        <Col xs={10} className="central">
+                                        <Col xs={10}>
                                             <p>E-mail: gcd.intl@msa.hinet.net</p>
                                         </Col>
                                     </Row>
                                     <Row className="info-row">
-                                        <Col xs={2} className="central">
-                                            <img src="/images/svgs/pin.svg" alt="/images/svgs/pin.svg" />
+                                        <Col xs={2}>
+                                            <img src="/images/svgs/circle.svg" alt="/images/svgs/circle.svg" />
                                         </Col>
-                                        <Col xs={10} className="central">
+                                        <Col xs={10}>
                                             <p>
                                                 T5F., No. 20, Wenzhou St.,
                                                 <br />

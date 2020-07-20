@@ -14,8 +14,10 @@ const Projects = () => {
     const [windowWidth, setWindowWidth] = useState(0);
 
     useEffect(() => {
-        updateWindowDimensions();
-        window.addEventListener("resize", updateWindowDimensions);
+        setWindowWidth(window.innerWidth);
+        window.addEventListener("resize", () => {
+            setWindowWidth(window.innerWidth);
+        });
 
         if (window.location.pathname.split("/")[3] !== undefined) {
             works.map((wk) => {
@@ -24,11 +26,7 @@ const Projects = () => {
                 return null;
             });
         }
-    });
-
-    const updateWindowDimensions = () => {
-        setWindowWidth(window.innerWidth);
-    };
+    }, []);
 
     const openGallary = (history: RouteComponentProps, work: work) => {
         history.history.push("/projects/" + work.class + "/" + work.id);

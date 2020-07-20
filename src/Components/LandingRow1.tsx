@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-flexbox-grid";
 import { Link } from "react-router-dom";
 import { classes } from "../data";
@@ -50,18 +50,18 @@ export const LandingRow1D = () => {
             </Col>
             <Col xs={9} className="col2">
                 <img
-                    className={getImgStatus("https://gcd-official-preview.netlify.app/images/landingbg.png")}
-                    src="https://gcd-official-preview.netlify.app/images/landingbg.png"
-                    alt="https://gcd-official-preview.netlify.app/images/landingbg.png"
-                    onLoad={() => imgLoadedHandler("https://gcd-official-preview.netlify.app/images/landingbg.png")}
+                    className={getImgStatus("/images/landingbg.png")}
+                    src="/images/landingbg.png"
+                    alt="/images/landingbg.png"
+                    onLoad={() => imgLoadedHandler("/images/landingbg.png")}
                 />
                 <div className="logo-outer">
                     <div className="logo-inner">
                         <img
-                            className={getImgStatus("https://gcd-official-preview.netlify.app/images/svgs/logo.svg")}
-                            src="https://gcd-official-preview.netlify.app/images/svgs/logo.svg"
+                            className={getImgStatus("/images/svgs/logo.svg")}
+                            src="/images/svgs/logo.svg"
                             alt="logo"
-                            onLoad={() => imgLoadedHandler("https://gcd-official-preview.netlify.app/images/svgs/logo.svg")}
+                            onLoad={() => imgLoadedHandler("/images/svgs/logo.svg")}
                         />
                     </div>
                 </div>
@@ -85,7 +85,7 @@ export const LandingRow1M = () => {
     return (
         <Row className="row1 flex">
             <div className="landing-content">
-                <img className="logo" src="https://gcd-official-preview.netlify.app/images/svgs/logo.svg" alt="logo" />
+                <img className="logo" src="/images/svgs/logo.svg" alt="logo" />
                 <div className="buttons">
                     <p
                         onClick={() => {
