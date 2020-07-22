@@ -52,6 +52,13 @@ export const classes = [
 
 export const works: work[] = [
     {
+        id: "edwards_lifesciences_taiwan",
+        name: "Edwards Lifesciences Taiwan",
+        class: "workplace",
+        fileRoot: "https://i.imgur.com",
+        photos: ["dZSi0JS.jpg", "4s6fMWr.jpg", "o7YgM9e.jpg", "US4g6Kn.jpg", "AESIaQ0.jpg", "FS6O3y4.jpg"],
+    },
+    {
         id: "residence",
         name: "RESIDENCE",
         class: "residence",
@@ -207,13 +214,6 @@ export const works: work[] = [
         class: "workplace",
         fileRoot: "https://i.imgur.com",
         photos: ["q1PSxi5.jpg"],
-    },
-    {
-        id: "elison_fashion_co_ltd",
-        name: "ELISON FASHION CO. LTD.",
-        class: "workplace",
-        fileRoot: "https://i.imgur.com",
-        photos: ["dZSi0JS.jpg", "4s6fMWr.jpg", "o7YgM9e.jpg", "US4g6Kn.jpg", "AESIaQ0.jpg", "FS6O3y4.jpg"],
     },
     {
         id: "amgen_taiwan",
