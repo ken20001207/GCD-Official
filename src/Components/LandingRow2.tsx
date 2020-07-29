@@ -16,6 +16,7 @@ export const LandingRow2D = () => {
         <Row className="row2">
             <Col xs={7} className="col1">
                 <img
+                    onContextMenu={(e) => e.preventDefault()}
                     className={getImgStatus("/images/aboutbg.png")}
                     src="/images/aboutbg.png"
                     alt="aboutbg"
@@ -42,7 +43,7 @@ export const LandingRow2D = () => {
 export const LandingRow2M = () => {
     return (
         <Row className="row2">
-            <img src="/images/aboutbg.png" alt="aboutbg" />
+            <img onContextMenu={(e) => e.preventDefault()} src="/images/aboutbg.png" alt="aboutbg" />
             <div className="text">
                 <h2>About Us</h2>
                 <p>

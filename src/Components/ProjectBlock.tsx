@@ -29,6 +29,7 @@ export default class ProjectBlock extends Component<Props, States> {
                         <p>{work.name}</p>
                     </div>
                     <img
+                        onContextMenu={(e) => e.preventDefault()}
                         onClick={() => openGallary()}
                         className={imgLoaded ? "loaded" : "loading"}
                         src={work.fileRoot + "/" + work.photos[0]}

@@ -49,15 +49,20 @@ export const LandingRow1D = () => {
                 </div>
             </Col>
             <Col xs={9} className="col2">
-                <img
-                    className={getImgStatus("/images/landingbg.png")}
-                    src="/images/landingbg.png"
-                    alt="/images/landingbg.png"
-                    onLoad={() => imgLoadedHandler("/images/landingbg.png")}
-                />
+                <div className="landingbg">
+                    <img
+                        onContextMenu={(e) => e.preventDefault()}
+                        className={getImgStatus("/images/landingbg.jpg")}
+                        src="/images/landingbg.jpg"
+                        alt="/images/landingbg.jpg"
+                        onLoad={() => imgLoadedHandler("/images/landingbg.jpg")}
+                    />
+                </div>
+
                 <div className="logo-outer">
                     <div className="logo-inner">
                         <img
+                            onContextMenu={(e) => e.preventDefault()}
                             className={getImgStatus("/images/svgs/logo.svg")}
                             src="/images/svgs/logo.svg"
                             alt="logo"
@@ -85,7 +90,7 @@ export const LandingRow1M = () => {
     return (
         <Row className="row1 flex">
             <div className="landing-content">
-                <img className="logo" src="/images/svgs/logo.svg" alt="logo" />
+                <img onContextMenu={(e) => e.preventDefault()} className="logo" src="/images/svgs/logo.svg" alt="logo" />
                 <div className="buttons">
                     <p
                         onClick={() => {

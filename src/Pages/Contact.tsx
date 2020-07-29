@@ -14,13 +14,22 @@ const Contact = () => {
                         <div className="container">
                             <Row>
                                 <Col xs={12} md={6}>
-                                    <img className="map" src="/images/map.png" alt="/images/map.png" />
+                                    <img
+                                        onContextMenu={(e) => e.preventDefault()}
+                                        className="map"
+                                        src="/images/map.png"
+                                        alt="/images/map.png"
+                                    />
                                 </Col>
                                 <Col xs={12} mdOffset={1} md={5} className="right">
                                     <h4>PRIMARY CONTACTS</h4>
                                     <Row className="info-row">
                                         <Col xs={2}>
-                                            <img src="/images/svgs/phone.svg" alt="/images/svgs/phone.svg" />
+                                            <img
+                                                onContextMenu={(e) => e.preventDefault()}
+                                                src="/images/svgs/phone.svg"
+                                                alt="/images/svgs/phone.svg"
+                                            />
                                         </Col>
                                         <Col xs={10}>
                                             <p>
@@ -31,7 +40,11 @@ const Contact = () => {
                                     </Row>
                                     <Row className="info-row">
                                         <Col xs={2}>
-                                            <img src="/images/svgs/mail.svg" alt="/images/svgs/mail.svg" />
+                                            <img
+                                                onContextMenu={(e) => e.preventDefault()}
+                                                src="/images/svgs/mail.svg"
+                                                alt="/images/svgs/mail.svg"
+                                            />
                                         </Col>
                                         <Col xs={10}>
                                             <p>E-mail: gcd.intl@msa.hinet.net</p>
@@ -39,11 +52,15 @@ const Contact = () => {
                                     </Row>
                                     <Row className="info-row">
                                         <Col xs={2}>
-                                            <img src="/images/svgs/circle.svg" alt="/images/svgs/circle.svg" />
+                                            <img
+                                                onContextMenu={(e) => e.preventDefault()}
+                                                src="/images/svgs/circle.svg"
+                                                alt="/images/svgs/circle.svg"
+                                            />
                                         </Col>
                                         <Col xs={10}>
                                             <p>
-                                                T5F., No. 20, Wenzhou St.,
+                                                5F., No. 20, Wenzhou St.,
                                                 <br />
                                                 Da’an Dist., Taipei City 106
                                             </p>

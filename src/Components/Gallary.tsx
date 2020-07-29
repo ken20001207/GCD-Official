@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Col, Row } from "react-flexbox-grid";
 import { RouteComponentProps } from "react-router-dom";
 import "../Styles/Gallary.less";
 import { work } from "../types";
@@ -34,17 +33,17 @@ const Gallary = (props: { history: RouteComponentProps; watchingProject: work | 
         const imgUrl = props.watchingProject.fileRoot + "/" + props.watchingProject.photos[imgNo];
         return (
             <div className="gallary" onClick={closeGallary}>
-                <Row className="row">
-                    <Col xs={2} className="flex">
-                        <p onClick={prevImage}>{"<"}</p>
-                    </Col>
-                    <Col xs={8} className="flex">
-                        <img className={getImgStatus(imgUrl)} src={imgUrl} alt={imgUrl} onLoad={() => imgLoadedHandler(imgUrl)} />
-                    </Col>
-                    <Col xs={2} className="flex">
-                        <p onClick={nextImage}>{">"}</p>
-                    </Col>
-                </Row>
+                <p onClick={prevImage}>{"<"}</p>
+
+                <img
+                    onContextMenu={(e) => e.preventDefault()}
+                    className={getImgStatus(imgUrl)}
+                    src={imgUrl}
+                    alt={imgUrl}
+                    onLoad={() => imgLoadedHandler(imgUrl)}
+                />
+
+                <p onClick={nextImage}>{">"}</p>
             </div>
         );
     } else {
