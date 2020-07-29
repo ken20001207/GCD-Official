@@ -47,13 +47,12 @@ export const classes = [
     { title: "Healthcare", id: "healthcare" },
     { title: "Residential", id: "residential" },
     { title: "Religious", id: "religious" },
-    { title: "Residence", id: "residence" },
 ];
 
 export const works: work[] = [
     {
         id: "edwards_lifesciences_taiwan",
-        name: "Edwards Lifesciences Taiwan",
+        name: "EDWARDS LIFESCIENCES TAIWAN",
         class: "workplace",
         fileRoot: "https://i.imgur.com",
         photos: ["dZSi0JS.jpg", "4s6fMWr.jpg", "o7YgM9e.jpg", "US4g6Kn.jpg", "AESIaQ0.jpg", "FS6O3y4.jpg"],
@@ -61,7 +60,7 @@ export const works: work[] = [
     {
         id: "residence",
         name: "RESIDENCE",
-        class: "residence",
+        class: "residential",
         fileRoot: "https://i.imgur.com",
         photos: ["nfuJUXO.jpg", "AkSmG2q.jpg", "DeBvGZD.jpg", "T8yk5Ji.jpg", "6EJnX5W.jpg"],
     },

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-flexbox-grid";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
@@ -39,6 +39,7 @@ const Landing = () => {
                             <Link to={"/projects/" + hl.class + "/" + hl.id}>
                                 <div className="work-class">
                                     <img
+                                        onContextMenu={(e) => e.preventDefault()}
                                         src={hl.coverPhoto}
                                         className={getImgStatus(hl.coverPhoto)}
                                         alt={hl.coverPhoto}

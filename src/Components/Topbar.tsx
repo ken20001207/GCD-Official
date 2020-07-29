@@ -10,16 +10,10 @@ const Topbar = () => {
             <Row>
                 <Col xsOffset={1} xs={2} lg={1} className="flex">
                     <Link to="/">
-                        <img src="/images/svgs/logo.svg" alt="logo" />
+                        <img onContextMenu={(e) => e.preventDefault()} src="/images/svgs/logo.svg" alt="logo" />
                     </Link>
                 </Col>
-                <Col
-                    xsOffset={2}
-                    lgOffset={6}
-                    xs={2}
-                    lg={1}
-                    className="link"
-                >
+                <Col xsOffset={2} lgOffset={6} xs={2} lg={1} className="link">
                     <Link to="/">
                         <p>About</p>
                     </Link>
